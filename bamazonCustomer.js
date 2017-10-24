@@ -1,6 +1,9 @@
 // Load the NPM Package inquirer
 var inquirer = require("inquirer");
 
+// Load the NPM Package for mysql
+var mysql = require("mysql");
+
 // Create a "Prompt" with a series of questions.
 inquirer
   .prompt([
@@ -18,3 +21,5 @@ inquirer
       `);
 
   });
+
+
