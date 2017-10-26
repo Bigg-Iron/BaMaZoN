@@ -4,55 +4,79 @@ var inquirer = require("inquirer");
 // Load the NPM Package for mysql
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  port     : '3306',
-  user     : 'root',
-  password : '',
-  database : 'BaMaZoN_DB'
-  
-});
- 
-connection.connect(function(err) {
-  if (err) {
-    console.error('error connecting: ' + err.stack);
-    return;
-  }
- 
-  console.log('connected as id ' + connection.threadId);
-});
- 
-connection.query('SELECT * FROM products', function (error, results, fields) {
-  if (error) throw error;
-  console.log('We have this much in stock: ', results[0].stock_quantity);
-});
- 
+// Load the NPM Package console.table
+var consoleTable = require("console.table")
 
 
 
 // Create a "Prompt" with a series of questions.
 inquirer
-  .prompt([
-    // Here we create a basic text prompt. Each question is an object in the array.
-    {
-      type: "input",
-      message: "What is your name?",
-      name: "username"
-    }
-  ])
+.prompt([
+  // Here we create a basic text prompt. Each question is an object in the array.
+  {
+    type: "input",
+    message: "What is your name?",
+    name: "username"
+  },
+  {
+    type: "input",
+    message: "What item are you looking for?",
+    name: "product_name"
+  }
+])
 
-  .then(function(inquirerResponse) {
-      console.log(`
-      Welcome to BaMaZoN, ${inquirerResponse.username}!
-      `);
+.then(function(inquirerResponse) {
+  console.log(`
+  Welcome to BaMaZoN, ${inquirerResponse.username}!
+  `);
 
-  });
-
-
-  connection.end();
-
-
+  console.log(`Were you looking for this item? ${inquirerResponse.product_name} `)
   
+});
+
+
+
+// var connection = mysql.createConnection({
+//   host     : 'localhost',
+//   port     : '3306',
+//   user     : 'root',
+//   password : '',
+//   database : 'BaMaZoN_DB'
+  
+// });
+
+// connection.connect(function(err) {
+//   if (err) {
+//     console.error('error connecting: ' + err.stack);
+//     return;
+//   }
+  
+//   console.log('connected as id ' + connection.threadId);
+// });
+
+// connection.query('SELECT * FROM products', function (error, results, fields) {
+//   if (error) throw error;
+//   console.log('We have this much in stock: ', results[0].stock_quantity);
+// });
+
+// connection.end();
+
+
+// // console.table package
+// console.table([
+//   {
+//     product: 'book',
+//     price: 10,
+//     quantity: 100
+//   }, {
+//     product: 'banana',
+//     price: 1,
+//     quantity: 200
+//   }
+// ]);
+
+
+
   // 5. Running this application will first display all of the items available for sale. Include the ids, names, and prices of products for sale. 
   // npm install console.table --save
   // SELECT * FROM products

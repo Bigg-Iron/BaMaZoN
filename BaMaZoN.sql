@@ -12,6 +12,33 @@ CREATE TABLE products(
 );
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Book", "Books", 10.00, 100);
+VALUES ("Leonardo da Vinci", "Books", 10.00, 100);
 
--- 4. Populate this database with around 10 different products. (i.e. Insert "mock" data rows into this database and table). 
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Baby Monkey", "Toys & Games", 10.00, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Fire Stick", "Electronics", 10.00, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Fujifilm INSTAX", "Camera & Photo", 10.00, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Super Mario Odyssey", "Video Games", 10.00, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("T-rex Inflatable Costume", "Clothes", 10.00, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Wonder Woman", "Movies & TV", 10.00, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Nintendo Switch", "Video Games", 10.00, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Sony A7R", "Camera & Photo", 3198.00, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Goodnight Moon", "Books", 7.19, 100);
+
+
