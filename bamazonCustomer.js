@@ -9,35 +9,45 @@ var consoleTable = require("console.table")
 
 
 
-
 console.log(`Welcome to BaMaZon! 
 
 `);
 
+function initiateQuestions() {
 
-var questions = [{
-    name: "items",
-    type: "list",
-    message: " Welcome to BaMaZon! Here are some items you can buy: ",
-    choices: ["Leonardo Da Vinci book $10", "Sony A7R $3198", "Baby Monkey toy $10", "Fire Stick $10", "Super Mario Odyssey game $10", "Wonder Woman the movie $10", "Fujifilm INSTAX $10", "T-rex Inflatable Costume $10", "Goodnight Moon $7", "Nintendo Switch $10"]
-  },
-  {
-    name: "quantity",
-    type: "input",
-    message: "How many would you like to buy?",
+  var questions = [{
+      name: "items",
+      type: "list",
+      message: " Welcome to BaMaZon! Here are some items you can buy: ",
+      choices: ["Leonardo Da Vinci book $10", "Sony A7R $10", "Baby Monkey toy $10 ", "Fire Stick$10 ", "Super Mario Odyssey game $10 ", "Wonder Woman the movie $10 ", "Fujifilm INSTAX $10", "T-rex Inflatable Costume $10 ", "Goodnight Moon $10 ", "Nintendo Switch $10 "]
+    },
+    {
+      name: "quantity",
+      type: "input",
+      message: "How many would you like to buy?",
 
-  }
-];
+    }
+  ];
 
-inquirer.prompt(questions).then(function (answers) {
-  console.log('\n Order receipt: \n');
+  inquirer.prompt(questions).then(function (answers) {
+    console.log('\n Order receipt: \n');
 
-  console.log('Item: ' + answers.items);
-  console.log('   ');
-  console.log('Quantity: ' + answers.quantity);
+    console.log('Item:  ' + answers.items);
+    console.log('   ');
+    console.log('Quantity: ' + answers.quantity);
+    console.log('   ');
+
+    
+    
+
+  });
+
+}
+
+initiateQuestions();
 
 
-});
+
 
 
 // Function that gets data from mysql database.
