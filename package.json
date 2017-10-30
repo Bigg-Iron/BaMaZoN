@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/Bigg-Iron/BaMaZoN#readme",
   "dependencies": {
+    "chalk": "^2.3.0",
     "console.table": "^0.9.1",
     "inquirer": "^3.3.0",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "table": "^4.0.2"
   }
 }
