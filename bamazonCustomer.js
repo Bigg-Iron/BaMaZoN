@@ -16,42 +16,39 @@ Below are items for purchase:
 `);
 
 
-console.table([
-  {
-    Product: 'Leonardo Da Vinci book',
-    Price: 10
-  }, {
-    Product: 'Sony A7R',
-    Price: 10
-  }, {
-    Product: 'Fire Stick',
-    Price: 10
-  }, {
-    Product: 'Super Mario Odyssey game',
-    Price: 10
-  }, {
-    Product: 'Wonder Woman the movie',
-    Price: 10
-  }, {
-    Product: 'Fujifilm INSTAX',
-    Price: 10
-  }, {
-    Product: 'T-rex Inflatable Costume',
-    Price: 10
-  }, {
-    Product: 'Goodnight Moon',
-    Price: 10
-  }, {
-    Product: 'Nintendo Switch',
-    Price: 10
-  }, {
-    Product: 'Baby Monkey',
-    Price: 10
-  }
-]);
+console.table([{
+  Product: 'Leonardo Da Vinci book',
+  Price: 10
+}, {
+  Product: 'Sony A7R',
+  Price: 10
+}, {
+  Product: 'Fire Stick',
+  Price: 10
+}, {
+  Product: 'Super Mario Odyssey game',
+  Price: 10
+}, {
+  Product: 'Wonder Woman the movie',
+  Price: 10
+}, {
+  Product: 'Fujifilm INSTAX',
+  Price: 10
+}, {
+  Product: 'T-rex Inflatable Costume',
+  Price: 10
+}, {
+  Product: 'Goodnight Moon',
+  Price: 10
+}, {
+  Product: 'Nintendo Switch',
+  Price: 10
+}, {
+  Product: 'Baby Monkey',
+  Price: 10
+}]);
 
 
-function itemQuestions() {
 
   var questions = [{
       name: "items",
@@ -67,27 +64,24 @@ function itemQuestions() {
     }
   ];
 
+
   inquirer.prompt(questions).then(function (answers) {
     console.log('\n Order receipt: \n');
     var item = answers.items;
     var quantity = answers.quantity;
 
+    var orderRecipt = [item,quantity];
+
+    // console.log(orderRecipt);
+    
     console.log('Item:  ' + item);
     console.log('   ');
     console.log('Quantity: ' + quantity);
     console.log('   ');
 
-    
-
-    
-    
-    
-
   });
 
-}
 
-itemQuestions();
 
 
 
@@ -122,7 +116,7 @@ function bamazonSQL() {
     if (error) throw error;
     // mysql results
     // console.log(results);
-    
+
     var productID = results[0].id;
     var productName = results[0].product_name;
     var department_name = results[0].department_name;
@@ -130,15 +124,15 @@ function bamazonSQL() {
     var stockQuantity = results[0].stock_quantity;
 
     var product1 = {
-      product_ID: productID, 
-      product_Name: productName, 
+      product_ID: productID,
+      product_Name: productName,
       departmentName: department_name,
-      product_price: productPrice, 
+      product_price: productPrice,
       quantity: stockQuantity
     };
 
-    // console.log(product1);
-    
+    console.log(product1);
+
 
   });
 
@@ -146,4 +140,4 @@ function bamazonSQL() {
 
 }
 
-bamazonSQL();
+// bamazonSQL();
